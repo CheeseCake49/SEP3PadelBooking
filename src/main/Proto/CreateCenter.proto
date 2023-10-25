@@ -1,18 +1,20 @@
+syntax = "proto3";
 option java_multiple_files = true;
+package src.main.java.Center;
 
 message Center {
-  required string name = 1;
-  required string location = 2;
+  optional string name = 1;
+  optional string location = 2;
   repeated Field fields = 3;
 }
 
 message Field {
-  required int32 id = 1;
+  optional int32 id = 1;
   repeated TimeSlot timeslots = 2;
 }
 
 message TimeSlot {
-  required int64 seconds = 1;
+  optional int64 seconds = 1;
 }
 
 service CenterCreator {
@@ -20,8 +22,8 @@ service CenterCreator {
 }
 
   message CenterInfo {
-    required string name = 1;
-    required string location = 2;
+    optional string name = 1;
+    optional string location = 2;
     optional int32 numberOfFields = 3;
 
   }
